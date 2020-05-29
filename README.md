@@ -1,4 +1,4 @@
-# feed-collector
+# feedme
 
 ## Getting Started
 
