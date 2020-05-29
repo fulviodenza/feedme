@@ -1,5 +1,12 @@
 import socket
 import sys
+import os
+try:
+    import requests
+except ImportError:
+    print ('Install required module')
+    os.system('python -m pip install requests')
+import requests
 
 # Create a TCP/IP socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
