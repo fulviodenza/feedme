@@ -64,4 +64,3 @@ while True:
                     break
         finally:
             connection.close()
-sock.close()

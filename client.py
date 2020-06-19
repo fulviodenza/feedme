@@ -23,7 +23,7 @@ try:
     print('sending ', inputQ)
 
     sock.sendto(inputQ.encode(), ('localhost', 10001))
-    data = sock.recv(1024)
+    data = sock.recv(256)
     data_len = len(data)
     print(len(data))
     i = 0
@@ -33,7 +33,7 @@ try:
             break
         print('[', i, ']', dataD)
         print('\n')
-        data = sock.recv(1024)
+        data = sock.recv(256)
         print(len(dataD))
         data_len =- 100
         i += 1
