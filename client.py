@@ -1,6 +1,8 @@
 import socket
 import sys
 import os
+from termcolor import colored
+
 try:
     import requests
 except ImportError:
@@ -8,6 +10,9 @@ except ImportError:
     os.system('python -m pip install requests')
 import requests
 
+TRED =  '\033[31m'
+TYELLOW = '\033[37m'
+ENDC = '\033[m'
 # Create a TCP/IP socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
@@ -31,7 +36,7 @@ try:
         dataD = data.decode('utf-8')
         if not data:
             break
-        print('[', i, ']', dataD)
+        print(TRED + '[]' + ENDC + dataD)
         data = sock.recv(256)
         print(len(dataD))
         data_len =- 100
