@@ -1,12 +1,14 @@
 import requests
 from decouple import config
+from datetime import datetime
 
 GOOGLE_API_KEY = config('GOOGLE_NEWS_KEY')
+today = datetime.today().strftime('%Y-%m-%d')
 
 def getNews(query):
     url = ('http://newsapi.org/v2/everything?'
        'q='+ query + '&'
-       'from=2020-05-29&'
+       'from=' + today + '&'
        'sortBy=popularity&'
        'apiKey=' + GOOGLE_API_KEY)
     response = requests.get(url)

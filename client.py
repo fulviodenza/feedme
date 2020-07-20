@@ -32,7 +32,6 @@ try:
         if not data:
             break
         print('[', i, ']', dataD)
-        print('\n')
         data = sock.recv(256)
         print(len(dataD))
         data_len =- 100
